@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_nw/widgets/glass_box.dart';
@@ -29,8 +30,9 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Header(),
-              const SizedBox(height: 20),
-              CVButton(),
+              const SizedBox(height: 80),
+              FadeInLeft(child: CVButton()),
+              //TODO: add social buttons
               const SizedBox(height: 80),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +68,43 @@ I start working from 08/2020
                     imageUrl:
                         'https://raw.githubusercontent.com/nestorsgarzonc/Waffly/master/screenshots/Screenshot_2020-10-08-18-33-48-416_com.example.ed_project.jpg',
                     description:
-                        "Waffly: is a marketplace of skills in which users can request services such as cleaning a house or software development.\nThis project was developed Flutter.",
+                        "Waffly is a marketplace of skills in which users can request services such as cleaning a house or software development.\nThis project was developed Flutter.",
+                  ),
+                  ProjectCard(
+                    url: 'https://codepen.io/nestorsgarzonc/pen/KKzgPGx',
+                    isReverse: false,
+                    title: 'Cybertruck',
+                    imageUrl:
+                        'https://raw.githubusercontent.com/nestorsgarzonc/cybertruck_flutter/master/image1.png',
+                    description: "I build a Cybertruck in Flutter from scratch using custompainter",
+                  ),
+                  ProjectCard(
+                    url: 'https://github.com/nestorsgarzonc/Off_Corss_Front_End',
+                    isReverse: true,
+                    title: 'OffCorss frontend',
+                    imageUrl:
+                        'https://raw.githubusercontent.com/nestorsgarzonc/Off_Corss_Front_End/master/Captura%20de%20pantalla%202021-02-17%20171918.png',
+                    description:
+                        "Identify customer behavior in stores:\nFor the DS4A course with my team, we built a system that allows us to identify customer behavior in stores using computer vision. This project was made using CV2, Deep SORT, YOLO, and a user interface with Dash.\nThe algorithm allows us to find the paths of the people in the store and providing better selling opportunities.",
+                  ),
+                  ProjectCard(
+                    url:
+                        'https://github.com/nestorsgarzonc/Data-Science-Proyects/blob/master/malaria_detection.ipynb',
+                    isReverse: false,
+                    title: 'Malaria detection',
+                    imageUrl:
+                        'https://raw.githubusercontent.com/nestorsgarzonc/Data-Science-Proyects/master/Captura%20de%20pantalla%202021-02-17%20172530.png',
+                    description:
+                        "I build a malaria classifier with convolutional neural networks using tensorflow",
+                  ),
+                  ProjectCard(
+                    url: 'https://github.com/nestorsgarzonc/waffly_rest_api',
+                    isReverse: true,
+                    title: 'Waffly backend',
+                    imageUrl:
+                        'https://raw.githubusercontent.com/nestorsgarzonc/waffly_rest_api/master/Captura%20de%20pantalla%202021-02-17%20173146.png',
+                    description:
+                        "Backend for Waffly app built in Express and NodeJS, using MongoDB as NoSQL database",
                   ),
                 ],
               ),
@@ -122,7 +160,7 @@ class Header extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('I\'m ', style: TextStyle(fontSize: 20)),
+                  Text('I\'m ', style: TextStyle(fontSize: 30)),
                   SizedBox(
                     height: 40,
                     child: RotateAnimatedTextKit(
@@ -134,12 +172,12 @@ class Header extends StatelessWidget {
                         'Python',
                         'NodeJS',
                       ],
-                      textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.start,
                       repeatForever: true,
                     ),
                   ),
-                  Text(' developer', style: TextStyle(fontSize: 20)),
+                  Text(' developer', style: TextStyle(fontSize: 30)),
                 ],
               ),
             ],
@@ -147,7 +185,7 @@ class Header extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(10000),
             child: Image.network(
-              'https://avatars.githubusercontent.com/u/40438456?s=400&u=ab054dea1cd8fb08d127a190aff586bd21d98432&v=4',
+              'https://media-exp1.licdn.com/dms/image/C4E03AQHOZDtz42bCXg/profile-displayphoto-shrink_800_800/0/1579381204249?e=1619049600&v=beta&t=4ljET0x1JsdHgJgGgzQVuskfjMCAa6pzGzCj3IB0Xs8',
               height: 250,
             ),
           ),

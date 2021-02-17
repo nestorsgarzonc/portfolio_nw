@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 class GlassBox extends StatelessWidget {
@@ -19,19 +20,19 @@ class GlassBox extends StatelessWidget {
           Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Color(0xFF000000), Color(0xFF0A0A0A)],
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight,
-              ),
-            ),
+            decoration: BoxDecoration(color: Colors.black),
           ),
           ...List.generate(
-            random.nextInt(10) + 4,
-            (_) => Positioned(
-              child: BackgroundCircle(
-                  color: Colors.white60, size: random.nextInt(250).toDouble(), isReverse: true),
+            random.nextInt(10) + 8,
+            (i) => Positioned(
+              child: ElasticIn(
+                delay: Duration(milliseconds: 500 + i * 60),
+                child: BackgroundCircle(
+                  color: Colors.white60,
+                  size: random.nextInt(250).toDouble(),
+                  isReverse: true,
+                ),
+              ),
               left: random.nextInt(size.height.toInt()).toDouble(),
               top: random.nextInt(size.height.toInt()).toDouble(),
             ),

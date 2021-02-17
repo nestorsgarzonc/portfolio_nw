@@ -25,16 +25,15 @@ class ProjectCard extends StatelessWidget {
       height: 400,
       child: Row(
         textDirection: isReverse ? TextDirection.rtl : TextDirection.ltr,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.network(
             imageUrl,
-            fit: BoxFit.cover,
-            height: 400,
+            width: size.width * 0.4,
           ),
           Container(
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.7),
+              color: Colors.white.withOpacity(0.8),
               borderRadius: BorderRadius.circular(15),
               border: Border.all(color: Colors.white),
             ),
@@ -58,11 +57,11 @@ class ProjectCard extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () => launch(url),
                     child: Text(
-                      'Go to $title',
-                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+                      'Go to $title'.toUpperCase(),
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
                     ),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateColor.resolveWith((states) => Colors.white),
+                      backgroundColor: MaterialStateColor.resolveWith((states) => Colors.black),
                       shadowColor: MaterialStateColor.resolveWith((states) => Colors.grey),
                     ),
                   ),
