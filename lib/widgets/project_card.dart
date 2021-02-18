@@ -38,7 +38,7 @@ class ProjectCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               border: Border.all(color: Colors.white),
             ),
-            height: isScreenWide ? 340 : 320,
+            height: isScreenWide ? 351 : 320,
             width: isScreenWide ? size.width * 0.4 : size.width * 0.85,
             padding: isScreenWide
                 ? EdgeInsets.symmetric(vertical: 40, horizontal: 25)

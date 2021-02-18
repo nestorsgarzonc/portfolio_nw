@@ -24,8 +24,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    print('size.width: ${size.width}');
-    print('size.height: ${size.height}');
     bool isScreenWide = size.width >= size.height * 0.9;
     return Scaffold(
       body: GlassBox(
@@ -54,12 +52,12 @@ class HomeScreen extends StatelessWidget {
                     description: """
 I worked building new user experiences using Dart and Flutter, clean architecture, handling errors, implementing new features proposed by the product team, propose UI/UX improvements, and helping to incorporate good practices using the effective Dart.
 
-I start working from 08/2020
+I start working from 08/2020.
 """,
                     url: 'https://puntopay.co/',
                     title: 'Puntopay',
                     imageUrl:
-                        'https://play-lh.googleusercontent.com/40zc0r7yEI5W6ptpWMDvCVbgQVxAeLagsi6yo8MoLxsJxPL59m9pOs0Zal12VFMA64Y=w1060-h959-rw',
+                        'https://play-lh.googleusercontent.com/0hpx32h965k8Bch6aOoNe7WUYT2_aozE9gg6q2jbB1NXwC7npiwzciq3o-cOITpOXJI=s180-rw',
                   ),
                 ],
               ),
@@ -85,7 +83,8 @@ I start working from 08/2020
                     title: 'Cybertruck',
                     imageUrl:
                         'https://raw.githubusercontent.com/nestorsgarzonc/cybertruck_flutter/master/image1.png',
-                    description: "I build a Cybertruck in Flutter from scratch using custompainter",
+                    description:
+                        "I build a Cybertruck in Flutter from scratch using custompainter.",
                   ),
                   ProjectCard(
                     url: 'https://github.com/nestorsgarzonc/Off_Corss_Front_End',
@@ -104,7 +103,7 @@ I start working from 08/2020
                     imageUrl:
                         'https://raw.githubusercontent.com/nestorsgarzonc/Data-Science-Proyects/master/Captura%20de%20pantalla%202021-02-17%20172530.png',
                     description:
-                        "I build a malaria classifier with convolutional neural networks using tensorflow",
+                        "I build a malaria classifier with convolutional neural networks using tensorflow.",
                   ),
                   ProjectCard(
                     url: 'https://github.com/nestorsgarzonc/waffly_rest_api',
@@ -189,7 +188,7 @@ class Header extends StatelessWidget {
                       repeatForever: true,
                     ),
                   ),
-                  Text(' developer', style: TextStyle(fontSize: 25)),
+                  Text(' developer.', style: TextStyle(fontSize: 25)),
                 ],
               ),
             ],
@@ -198,8 +197,10 @@ class Header extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(10000),
             child: Image.network(
-              'https://avatars.githubusercontent.com/u/40438456?s=460&u=ab054dea1cd8fb08d127a190aff586bd21d98432&v=4',
+              'https://raw.githubusercontent.com/nestorsgarzonc/portfolio_nw/master/IMG-20200209-WA0009.jpg',
               height: 250,
+              width: 250,
+              fit: BoxFit.cover,
             ),
           ),
         ],
