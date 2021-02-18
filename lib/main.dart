@@ -3,6 +3,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_nw/widgets/glass_box.dart';
 import 'package:portfolio_nw/widgets/project_card.dart';
+import 'package:portfolio_nw/widgets/social_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MyApp());
@@ -22,24 +23,32 @@ class MyApp extends StatelessWidget {
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    print('size.width: ${size.width}');
+    print('size.height: ${size.height}');
+    bool isScreenWide = size.width >= size.height * 0.9;
     return Scaffold(
       body: GlassBox(
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(vertical: 40, horizontal: 80),
+          padding: isScreenWide
+              ? EdgeInsets.symmetric(vertical: 40, horizontal: 80)
+              : EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: isScreenWide ? CrossAxisAlignment.start : CrossAxisAlignment.center,
             children: [
+              const SizedBox(height: 50),
               Header(),
-              const SizedBox(height: 80),
+              const SizedBox(height: 60),
               FadeInLeft(child: CVButton()),
-              //TODO: add social buttons
-              const SizedBox(height: 80),
+              SocialIcons(),
+              //TODO: add about me
+              SizedBox(height: isScreenWide ? 80 : 40),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Work experience:',
-                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: isScreenWide ? 40 : 30, fontWeight: FontWeight.bold),
                   ),
                   ProjectCard(
                     description: """
@@ -59,7 +68,7 @@ I start working from 08/2020
                 children: [
                   Text(
                     'Projects:',
-                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: isScreenWide ? 40 : 30, fontWeight: FontWeight.bold),
                   ),
                   ProjectCard(
                     url: 'https://github.com/nestorsgarzonc/Waffly',
@@ -142,8 +151,12 @@ class CVButton extends StatelessWidget {
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    bool isScreenWide = size.width >= size.height * 0.9;
+
     return Container(
-      child: Row(
+      child: Flex(
+        direction: isScreenWide ? Axis.horizontal : Axis.vertical,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -160,7 +173,6 @@ class Header extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('I\'m ', style: TextStyle(fontSize: 30)),
                   SizedBox(
                     height: 40,
                     child: RotateAnimatedTextKit(
@@ -172,20 +184,21 @@ class Header extends StatelessWidget {
                         'Python',
                         'NodeJS',
                       ],
-                      textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                      textStyle: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.start,
                       repeatForever: true,
                     ),
                   ),
-                  Text(' developer', style: TextStyle(fontSize: 30)),
+                  Text(' developer', style: TextStyle(fontSize: 25)),
                 ],
               ),
             ],
           ),
+          if (!isScreenWide) const SizedBox(height: 20),
           ClipRRect(
             borderRadius: BorderRadius.circular(10000),
             child: Image.network(
-              'https://media-exp1.licdn.com/dms/image/C4E03AQHOZDtz42bCXg/profile-displayphoto-shrink_800_800/0/1579381204249?e=1619049600&v=beta&t=4ljET0x1JsdHgJgGgzQVuskfjMCAa6pzGzCj3IB0Xs8',
+              'https://avatars.githubusercontent.com/u/40438456?s=460&u=ab054dea1cd8fb08d127a190aff586bd21d98432&v=4',
               height: 250,
             ),
           ),
