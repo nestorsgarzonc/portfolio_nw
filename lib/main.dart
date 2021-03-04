@@ -39,7 +39,15 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 60),
               FadeInLeft(child: CVButton()),
               SocialIcons(),
-              //TODO: add about me
+              const SizedBox(height: 40),
+              Text(
+                'About me:',
+                style: TextStyle(fontSize: isScreenWide ? 40 : 30, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                  '''Colombian software developer with 1+ years working with mobile apps with Flutter, implementing CI/CD, using SCRUM.
+Also, I worked with ExpressJS and FastAPI building a REST API, MongoDB, and MongoDB Atlas for database and Postgresql, AWS EC2, and AWS RDS to deploy an ML project. Tensorflow to build Deep learning models, SKLearn for ML models.'''),
               SizedBox(height: isScreenWide ? 80 : 40),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,13 +86,13 @@ I start working from 08/2020.
                         "Waffly is a marketplace of skills in which users can request services such as cleaning a house or software development.\nThis project was developed Flutter.",
                   ),
                   ProjectCard(
-                    url: 'https://codepen.io/nestorsgarzonc/pen/KKzgPGx',
+                    url: 'https://www.youtube.com/watch?v=vTlqkqSemNM',
                     isReverse: false,
                     title: 'Cybertruck',
                     imageUrl:
                         'https://raw.githubusercontent.com/nestorsgarzonc/cybertruck_flutter/master/image1.png',
                     description:
-                        "I build a Cybertruck in Flutter from scratch using custompainter.",
+                        'I build a Cybertruck in Flutter from scratch using custompainter.\nFlutter pen of the week.\nThis project was mencioned in Flutter explained channel saying: "we love the most how precisely and accurate he recreated the Cybertruck" in the minute 4:10.',
                   ),
                   ProjectCard(
                     url: 'https://github.com/nestorsgarzonc/Off_Corss_Front_End',
@@ -132,7 +140,7 @@ class CVButton extends StatelessWidget {
       height: 50,
       child: ElevatedButton(
         onPressed: () => launch(
-          'https://drive.google.com/file/d/1Xfqw2SzGptfElTUnYQOcVD6xa7fs9o3G/view?usp=sharing',
+          'https://drive.google.com/file/d/15UuJLjHu6nZLb5JOmI0svAvacR2gLApD/view?usp=sharing',
         ),
         child: Text(
           'Download CV',
